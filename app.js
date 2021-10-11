@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express')
 const hbs = require('hbs');
 
 const app = express()
-
+const port = process.env.PORT;
 
 
 
@@ -32,4 +33,6 @@ app.get('/elements', (req,res) => {
 });
 
 
-app.listen(8080);
+app.listen(port, () => {
+    console.log(`http://localhost:${port}`)
+});
